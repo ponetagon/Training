@@ -12,3 +12,11 @@ To build the Docker image for the ratings service, use the following command:
 
 ```bash
 docker build -t ratings:v1 .
+
+
+## Run the Docker container
+
+To run the Docker image for the ratings service, use the following command:
+
+```bash
+docker run -d --name ratings -p 8080:9080 ratings:v1
