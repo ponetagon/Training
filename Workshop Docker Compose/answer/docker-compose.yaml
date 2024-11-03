@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  ratings:
+    image: ratings:v1
+    ports:
+      - "8083:9080"
+    environment:
+      - DATABASE_URL=postgresql://ratings:ratings@db:5432/ratingsdb
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: ratings
+      POSTGRES_PASSWORD: ratings
+      POSTGRES_DB: ratingsdb
+    ports:
+      - "5432:5432"
