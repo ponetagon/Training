@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-container-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multi-container-app
+  template:
+    metadata:
+      labels:
+        app: multi-container-app
+    spec:
+      volumes:
+      - name: shared-logs
+        emptyDir: {}
+
+      containers:
+      - name: nginx
+        image: nginx:latest
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: shared-logs
+
+      - name: busybox
+        image: busybox:latest
+        command: [ "sh", "-c", "cat /var/log/nginx/access.log && sleep 3600" ]
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: shared-logs

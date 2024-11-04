@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: ClusterIP  # Change to NodePort or LoadBalancer if needed
+  selector:
+    app: nginx-app
+    version: blue  # Pointing to the blue version initially
+  ports:
+    - port: 80
+      targetPort: 80
