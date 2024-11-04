@@ -9,9 +9,15 @@ Before starting the workshop, make sure you have:
 
  **Basic Docker Commands**
    - Pulling an image: `docker pull`
+   - Push an image: `docker push`
+   - Login to registry `docker login`
    - Running a container: `docker run`
    - Listing running containers: `docker ps`
+   - Start and Logs containers: `docker start` and `docker logs`
    - Stopping and removing containers: `docker stop` and `docker rm`
+   - Execute into container console `docker exec`
+   - List images `docker images`
+   - Remove images `docker rmi`
 
  **Building Docker Images**
    - Writing a `Dockerfile`
