@@ -1,0 +1,9 @@
+apiVersion: v2
+name: grafana-chart
+description: A Helm chart for deploying Grafana in Kubernetes
+type: application
+version: 1.0.0
+appVersion: "11.3.0"  # Replace with the Grafana version you want to use
+sources:
+  - https://grafana.com
+home: https://grafana.com

@@ -1,0 +1,20 @@
+replicas: 1
+image:
+  repository: grafana/grafana
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+
+adminPassword: "P@ssw0rd"
+auth:
+  anonymous: true
+persistence:
+  size: 10Gi
+  storageClassName: 
+
+ingress:
+  enabled: true
+  host: grafana-pontakon.bdms.co.th
+  className: "nginx"           # or "traefik" or other ingress controllers
+  tlsSecret: "tls-secret"

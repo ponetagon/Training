@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-pontakon
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+      - nginx-pontakon.bdms.co.th
+    secretName: tls-secret
+  rules:
+  - host: nginx-pontakon.bdms.co.th
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-pontakon
+            port:
+              number: 80

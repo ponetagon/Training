@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-grafana-config
+  labels:
+    app.kubernetes.io/name: {{ include "grafana-chart.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+data:
+  grafana.ini: |
+    [security]
+    admin_user = admin
+
+    [server]
+    root_url = http://{{ .Values.ingress.host }}/
+
+    [auth.anonymous]
+    enabled = {{ .Values.auth.anonymous }}
