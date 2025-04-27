@@ -15,6 +15,6 @@ persistence:
 
 ingress:
   enabled: true
-  host: grafana-pontakon.bdms.co.th
+  host: grafana-pontakon.traning.com
   className: "nginx"           # or "traefik" or other ingress controllers
   tlsSecret: "tls-secret"
