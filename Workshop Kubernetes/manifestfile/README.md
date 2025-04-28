@@ -8,7 +8,7 @@ https://kubernetes.io/pt-br/docs/reference/kubectl/cheatsheet/
 
 ## Kubernetes Basic Commands
 
-### 1. Get Resources
+### 1. Basic Command
 Retrieve information about various resources in the cluster.
 
 - Get all Pods:
